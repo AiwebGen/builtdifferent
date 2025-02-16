@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Built Different</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        /* Schermata di caricamento */
+        /* Loading screen */
         .loading-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8); /* Sfondo scuro */
+            background: rgba(0, 0, 0, 0.8); /* Dark background */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -23,7 +23,7 @@
         .loading-screen img {
             width: 150px;
             height: auto;
-            animation: rotateLogo 5s linear infinite; /* Animazione di rotazione */
+            animation: rotateLogo 5s linear infinite; /* Rotation animation */
         }
 
         @keyframes rotateLogo {
@@ -31,12 +31,12 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Nascondere il contenuto principale fino al caricamento */
+        /* Hide main content until loading is complete */
         .main-content {
             display: none;
         }
 
-        /* Stile della pagina principale */
+        /* Main page style */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -119,68 +119,68 @@
 </head>
 <body>
 
-<!-- Schermata di caricamento -->
+<!-- Loading screen -->
 <div class="loading-screen">
     <img src="https://i.ibb.co/rR2qGcQZ/built-logo.jpg" alt="Built Different Logo">
 </div>
 
-<!-- Contenuto principale -->
+<!-- Main content -->
 <div class="main-content">
     <header>
         <h1>Built Different</h1>
     </header>
 
     <nav>
-        <a href="#about">Chi Siamo</a>
-        <a href="#features">Funzionalità</a>
-        <a href="#contact">Contattaci</a>
+        <a href="#about">About Us</a>
+        <a href="#features">Features</a>
+        <a href="#contact">Contact Us</a>
     </nav>
 
     <section id="about" class="section">
-        <h2>Benvenuto nella nostra piattaforma</h2>
+        <h2>Welcome to Our Platform</h2>
         <p>
-            Una piattaforma innovativa che ti permette di connetterti, interagire e sfruttare il potenziale del Web3. Unisciti alla rivoluzione tecnologica con Built Different.
+            An innovative platform that allows you to connect, interact, and leverage the potential of Web3. Join the technological revolution with Built Different.
         </p>
-        <a href="#contact" class="cta-button">Scopri di più</a>
+        <a href="#contact" class="cta-button">Learn More</a>
     </section>
 
     <section id="features" class="section">
-        <h2>Funzionalità Principali</h2>
+        <h2>Main Features</h2>
         <p>
-            Built Different offre una varietà di strumenti avanzati per l'ecosistema Web3:
+            Built Different offers a variety of advanced tools for the Web3 ecosystem:
         </p>
         <ul>
-            <li>Transazioni sicure con criptovalute</li>
-            <li>Interoperabilità tra diverse blockchain</li>
-            <li>Gestione facile di NFT e token</li>
-            <li>Accesso a strumenti DeFi avanzati</li>
+            <li>Secure cryptocurrency transactions</li>
+            <li>Interoperability between different blockchains</li>
+            <li>Easy management of NFTs and tokens</li>
+            <li>Access to advanced DeFi tools</li>
         </ul>
     </section>
 
     <section id="contact" class="section">
-        <h2>Contattaci</h2>
+        <h2>Contact Us</h2>
         <p>
-            Hai domande o vuoi saperne di più sul nostro progetto? Contattaci!
+            Have questions or want to learn more about our project? Get in touch!
         </p>
-        <a href="mailto:info@builtdifferent.com" class="cta-button">Invia una Email</a>
+        <a href="mailto:info@builtdifferent.com" class="cta-button">Send an Email</a>
     </section>
 
     <footer class="footer">
-        <p>&copy; 2025 Built Different. Tutti i diritti riservati.</p>
+        <p>&copy; 2025 Built Different. All rights reserved.</p>
         <p>
-            <a href="#">Privacy Policy</a> | <a href="#">Termini e Condizioni</a>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms and Conditions</a>
         </p>
-        <!-- Link a Linktree nel footer -->
-        <a href="https://linktr.ee/BuiltDifferentCTO" target="_blank">Visita il nostro Linktree</a>
+        <!-- Link to Linktree in the footer -->
+        <a href="https://linktr.ee/BuiltDifferentCTO" target="_blank">Visit our Linktree</a>
     </footer>
 </div>
 
 <script>
-    // Funzione per nascondere la schermata di caricamento e mostrare il contenuto principale dopo almeno 5 secondi
+    // Function to hide loading screen and show main content after at least 5 seconds
     setTimeout(function() {
         document.querySelector('.loading-screen').style.display = 'none';
         document.querySelector('.main-content').style.display = 'block';
-    }, 5000); // 5 secondi
+    }, 5000); // 5 seconds
 </script>
 
 </body>
