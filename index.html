@@ -20,26 +20,9 @@
       overflow: hidden;
       z-index: 9999;
     }
-    #splash .gif-container {
-      position: relative;
-      width: 100%;
-      max-width: 800px;
-      height: 0;
-      padding-bottom: 100%;
-    }
-    #splash .gif-container img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border: none;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    #splash img {
+      max-width: 100%;
+      height: auto;
     }
     body {
       background: linear-gradient(45deg, #1c1c1c, #a9a9a9);
@@ -48,19 +31,12 @@
       color: white;
       font-family: 'Bangers', cursive, Arial, sans-serif;
       text-align: center;
-      overflow-y: auto;
+      display: none; /* Nasconde il sito fino alla fine dello splash */
     }
     @keyframes gradientShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
-    }
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-      padding: 20px;
     }
     .section {
       padding: 80px 20px;
@@ -76,84 +52,30 @@
       margin-bottom: 20px;
       text-transform: uppercase;
     }
-    /* Stile per la sezione ABOUT */
-    .about-text {
-      font-size: 1.5rem;
-      line-height: 1.6;
-      text-align: center;
-    }
-    .highlight {
-      color: #ffcc00;
-      font-weight: bold;
-    }
-    .fire {
-      color: #ff4500;
-    }
-    /* Footer */
-    .footer {
-      background-color: #111;
-      padding: 20px;
-      text-align: center;
-      margin-top: 50px;
-    }
-    .footer a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-      font-size: 1rem;
-    }
   </style>
-  <script>
-    // Nasconde lo splash screen dopo 5 minuti e 40 secondi (340000 ms)
-    window.addEventListener('DOMContentLoaded', () => {
-      setTimeout(() => {
-        document.getElementById('splash').style.display = 'none';
-      }, 340000);
-    });
-  </script>
 </head>
 <body>
 
   <!-- Splash Screen -->
   <div id="splash">
-    <div class="gif-container">
-      <img src="https://imagizer.imageshack.com/img923/4705/8vTFg2.gif" alt="Splash GIF">
-    </div>
+    <img src="https://imagizer.imageshack.com/img923/4705/8vTFg2.gif" alt="Splash GIF">
   </div>
 
-  <!-- ABOUT Section -->
-  <div id="about" class="section">
-    <h2>🚀 COMMUNITY TAKEOVER – <span class="highlight">$BUILT DIFFERENT IS BACK!</span> 🚀</h2>
-    <p class="about-text">
-      They tried to stop us. They tried to shut us down. But we are <span class="highlight">DIFFERENT</span>.
-    </p>
-    <p class="about-text">
-      $BUILT DIFFERENT wasn’t just a memecoin—it was a mentality. We started with fire in our veins, backed by major names like <span class="highlight">Davinci (buy 1$ of Bitcoin)</span> and a community that believed in our vision. Then came the rug… but instead of staying down, we got back up. Why? Because we are <span class="highlight">built different</span>.
-    </p>
-    <p class="about-text">
-      Now it’s our turn. The community takes control. Our mission? To bring <span class="highlight">$BUILT DIFFERENT</span> where it was always meant to be. No looking back, only forward.
-    </p>
-    <p class="about-text">
-      <span class="fire">🔥 No corrupt devs. Only united holders.</span><br>
-      <span class="fire">🔥 No false promises. Only actions.</span><br>
-      <span class="fire">🔥 No fear. Only determination.</span>
-    </p>
-    <p class="about-text">
-      If you’re here, it means you still believe in this vision. Let’s take back what’s ours.
-    </p>
-    <p class="about-text">
-      🔹 Join the movement<br>
-      🔹 Spread the revolution<br>
-      🔹 Show the world we are truly <span class="highlight">DIFFERENT</span>
+  <!-- Contenuto del sito -->
+  <div class="section">
+    <h2>🚀 COMMUNITY TAKEOVER – $BUILT DIFFERENT IS BACK! 🚀</h2>
+    <p>
+      They tried to stop us. They tried to shut us down. But we are <b>DIFFERENT</b>.
     </p>
   </div>
 
-  <!-- Footer -->
-  <div class="footer">
-    <a href="https://www.instagram.com/p/DF6lU2So37L/?igsh=cTFxMmEycWRncWU=" target="_blank">Instagram</a>
-    <a href="https://x.com/ctobuilt?s=21" target="_blank">X</a>
-    <a href="http://www.tiktok.com/@builtdifferentcto" target="_blank">TikTok</a>
-  </div>
+  <script>
+    // Rimuove lo splash screen e mostra il sito dopo 6 secondi (6000 ms)
+    setTimeout(() => {
+      document.getElementById('splash').style.display = 'none';
+      document.body.style.display = 'block'; // Mostra il sito dopo lo splash screen
+    }, 6000);
+  </script>
 
 </body>
 </html>
