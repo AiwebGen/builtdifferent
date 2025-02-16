@@ -21,7 +21,6 @@
       height: 100vh;
       object-fit: cover;
     }
-    
     /* Resto degli stili */
     * {
       margin: 0;
@@ -187,12 +186,20 @@
     }
   </style>
   <script>
-    // Nascondi lo splash una volta terminato il video
+    // Funzione per nascondere lo splash screen
+    function hideSplash() {
+      document.getElementById('splash').style.display = 'none';
+    }
     window.addEventListener('DOMContentLoaded', () => {
       const splashVideo = document.getElementById('splash-video');
-      splashVideo.addEventListener('ended', () => {
-        document.getElementById('splash').style.display = 'none';
+      // Se il video termina, nasconde lo splash
+      splashVideo.addEventListener('ended', hideSplash);
+      // In caso di errore, nasconde lo splash dopo 15 secondi
+      splashVideo.addEventListener('error', () => {
+        setTimeout(hideSplash, 15000);
       });
+      // Fallback: se per qualsiasi motivo l'evento 'ended' non scatta, nasconde lo splash dopo 15 secondi
+      setTimeout(hideSplash, 15000);
     });
     function copyToClipboard() {
       const text = document.getElementById("ca-text").innerText;
