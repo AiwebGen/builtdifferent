@@ -11,12 +11,23 @@
             box-sizing: border-box;
         }
         body {
-            background-color: black;
+            background: linear-gradient(135deg, #333, #888, #fff);
             color: white;
-            font-family: Arial, sans-serif;
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Font per meme coins */
             text-align: center;
             overflow-y: auto;
+            animation: backgroundEffect 10s infinite alternate;
         }
+        
+        @keyframes backgroundEffect {
+            0% {
+                background: linear-gradient(135deg, #333, #888, #fff);
+            }
+            100% {
+                background: linear-gradient(135deg, #444, #aaa, #ccc);
+            }
+        }
+
         .container {
             display: flex;
             flex-direction: column;
@@ -24,32 +35,39 @@
             gap: 40px;
             padding: 20px;
         }
+
         .logo {
             width: 150px;
             height: auto;
         }
+
         .title {
             font-size: 2rem;
             font-weight: bold;
         }
+
         .socials {
             display: flex;
             gap: 15px;
         }
+
         .socials a {
             color: white;
             font-size: 1.5rem;
             text-decoration: none;
         }
+
         .main-image {
             width: 80%;
             max-width: 600px;
             height: auto;
         }
+
         .ca-section {
             margin-top: 20px;
             font-size: 1.2rem;
         }
+
         .ca-text {
             background-color: #222;
             padding: 10px;
@@ -57,6 +75,7 @@
             cursor: pointer;
             user-select: none;
         }
+
         .menu {
             width: 100%;
             background-color: #111;
@@ -67,16 +86,22 @@
             text-align: center;
             z-index: 1000;
         }
+
         .menu a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
             font-size: 1.2rem;
         }
+
         .section {
             padding: 80px 20px;
             min-height: 100vh;
+            border: 2px solid white;
+            border-radius: 15px; /* Cornice con angoli smussati */
+            margin: 20px 0;
         }
+
         .built-section {
             width: 80%;
             max-width: 600px;
@@ -85,18 +110,22 @@
             margin: 20px auto;
             text-align: center;
             background-color: #1a1a1a;
+            border-radius: 15px; /* Cornice con angoli smussati */
         }
+
         .built-title {
             font-size: 1.5rem;
             font-weight: bold;
             margin-bottom: 10px;
         }
+
         .footer {
             background-color: #111;
             padding: 20px;
             text-align: center;
             margin-top: 50px;
         }
+
         .footer a {
             color: white;
             text-decoration: none;
