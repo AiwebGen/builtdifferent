@@ -20,7 +20,7 @@
             text-align: center;
             overflow-y: auto;
             text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
-            letter-spacing: 1px; /* Spaziatura tra i caratteri per migliorare la leggibilità */
+            letter-spacing: 1px;
         }
         @keyframes gradientShift {
             0% { background-position: 0% 50%; }
@@ -41,7 +41,7 @@
         .title {
             font-size: 3rem;
             font-weight: bold;
-            letter-spacing: 2px; /* Maggiore spaziatura per il titolo */
+            letter-spacing: 2px;
         }
         .socials {
             display: flex;
@@ -105,7 +105,7 @@
             font-size: 2.5rem;
             font-weight: bold;
             margin-bottom: 10px;
-            letter-spacing: 3px; /* Maggiore spaziatura per i titoli delle sezioni */
+            letter-spacing: 3px;
         }
         .footer {
             background-color: #111;
@@ -126,6 +126,8 @@
             align-items: center;
         }
         .how-to-buy-item {
+            display: flex;
+            align-items: center;
             width: 80%;
             max-width: 600px;
             padding: 20px;
@@ -134,11 +136,17 @@
             border-radius: 15px;
             text-align: left;
         }
+        .how-to-buy-item img {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            border-radius: 10px;
+        }
         .how-to-buy-item h3 {
             font-size: 1.8rem;
             font-weight: bold;
             margin-bottom: 10px;
-            letter-spacing: 1px; /* Spaziatura tra i caratteri per i titoli delle sezioni "How to Buy" */
+            letter-spacing: 1px;
         }
         .how-to-buy-item p {
             font-size: 1.1rem;
@@ -181,16 +189,25 @@
         <h2>How to Buy</h2>
         <div class="how-to-buy-section">
             <div class="how-to-buy-item">
-                <h3>Download Wallet</h3>
-                <p>Download a Solana wallet, such as Phantom, which we highly recommend. You can easily install it from your device’s app store or as a Chrome extension for desktop users.</p>
+                <img src="https://imagizer.imageshack.com/img923/9535/9Cnumn.jpg" alt="Download Wallet">
+                <div>
+                    <h3>Download Wallet</h3>
+                    <p>Download a Solana wallet, such as Phantom, which we highly recommend. You can easily install it from your device’s app store or as a Chrome extension for desktop users.</p>
+                </div>
             </div>
             <div class="how-to-buy-item">
-                <h3>Add Solana</h3>
-                <p>Obtain Solana directly through the Phantom wallet, or alternatively, transfer Solana to your new wallet from an exchange.</p>
+                <img src="https://imagizer.imageshack.com/img923/9535/9Cnumn.jpg" alt="Add Solana">
+                <div>
+                    <h3>Add Solana</h3>
+                    <p>Obtain Solana directly through the Phantom wallet, or alternatively, transfer Solana to your new wallet from an exchange.</p>
+                </div>
             </div>
             <div class="how-to-buy-item">
-                <h3>Swap SOL For $BUILT</h3>
-                <p>Visit decentralized exchanges (DEXs) like Raydium, and paste the $BUILT contract address provided on this website to swap your SOL for $BUILT. Alternatively, click the button below.</p>
+                <img src="https://imagizer.imageshack.com/img923/9535/9Cnumn.jpg" alt="Swap SOL For $BUILT">
+                <div>
+                    <h3>Swap SOL For $BUILT</h3>
+                    <p>Visit decentralized exchanges (DEXs) like Raydium, and paste the $BUILT contract address provided on this website to swap your SOL for $BUILT. Alternatively, click the button below.</p>
+                </div>
             </div>
         </div>
     </div>
