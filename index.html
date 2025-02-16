@@ -6,14 +6,6 @@
     <title>Pepegogh</title>
     <style>
         * {
-            margin: 0;<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pepegogh</title>
-    <style>
-        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -58,7 +50,26 @@
             height: auto;
             margin-top: 20px;
         }
+        .ca-section {
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+        .ca-text {
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            user-select: none;
+        }
     </style>
+    <script>
+        function copyToClipboard() {
+            const text = document.getElementById("ca-text").innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Copied to clipboard: " + text);
+            });
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -70,56 +81,9 @@
             <a href="#" target="_blank">Website</a>
         </div>
         <img src="https://imagizer.imageshack.com/img924/9699/rrCl4u.jpg" alt="Built Different Image" class="main-image">
-    </div>
-</body>
-</html>
-
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-        .logo {
-            width: 150px;
-            height: auto;
-        }
-        .title {
-            font-size: 2rem;
-            font-weight: bold;
-        }
-        .socials {
-            display: flex;
-            gap: 15px;
-        }
-        .socials a {
-            color: white;
-            font-size: 1.5rem;
-            text-decoration: none;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <img src="logo.png" alt="Pepegogh Logo" class="logo">
-        <div class="title">PEPE<strong>GOGH</strong></div>
-        <div class="socials">
-            <a href="#" target="_blank">X</a>
-            <a href="#" target="_blank">Telegram</a>
-            <a href="#" target="_blank">Website</a>
+        <div class="ca-section">
+            <strong>CA:</strong>
+            <div id="ca-text" class="ca-text" onclick="copyToClipboard()">vsDLJBTQZTFcnvrosoA49Czqy9qZGu4tgjh768wpump</div>
         </div>
     </div>
 </body>
