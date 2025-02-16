@@ -3,112 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BuildDifferent</title>
+    <title>Web3 Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
+            background-color: #1e1e1e;
+            color: #fff;
         }
-        .container {
+        header {
+            background-color: #121212;
+            padding: 20px 0;
             text-align: center;
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 500px;
         }
-        h1 {
-            font-size: 24px;
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        nav {
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: #f39c12;
+        }
+        .cta-button {
+            background-color: #f39c12;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 20px 0;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            background-color: #e67e22;
+        }
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 32px;
             margin-bottom: 20px;
         }
-        select {
-            padding: 10px;
-            font-size: 16px;
-            margin-bottom: 20px;
+        .section p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 20px;
         }
-        audio {
-            width: 100%;
-            margin-top: 20px;
+        .footer {
+            background-color: #121212;
+            color: #aaa;
+            padding: 20px 0;
+            text-align: center;
         }
-        .controls {
-            margin-top: 20px;
+        .footer a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
         }
-        .controls button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #007BFF;
-            color: white;
+        .footer a:hover {
+            color: #f39c12;
+        }
+        .wallet-connect {
+            background-color: #2c3e50;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .wallet-connect button {
+            background-color: #27ae60;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 18px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin: 5px;
         }
-        .controls button:hover {
-            background-color: #0056b3;
-        }
-        .logo img {
-            width: 150px;
-            height: auto;
-            margin-bottom: 20px;
+        .wallet-connect button:hover {
+            background-color: #2ecc71;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="logo">
-        <img src="https://i.ibb.co/0Ry1jFnf" alt="Logo BuildDifferent">
-    </div>
-    <h1>BuildDifferent</h1>
-    <label for="songSelect">Scegli un brano:</label>
-    <select id="songSelect">
-        <option value="song1.mp3">Brano 1</option>
-        <option value="song2.mp3">Brano 2</option>
-        <option value="song3.mp3">Brano 3</option>
-    </select>
+<header>
+    <h1>Web3 Platform</h1>
+</header>
 
-    <audio id="audioPlayer" controls>
-        <source id="audioSource" src="song1.mp3" type="audio/mp3">
-        Il tuo browser non supporta l'elemento audio.
-    </audio>
+<nav>
+    <a href="#about">Chi Siamo</a>
+    <a href="#features">Funzionalità</a>
+    <a href="#contact">Contattaci</a>
+</nav>
 
-    <div class="controls">
-        <button onclick="playAudio()">Riproduci</button>
-        <button onclick="pauseAudio()">Pausa</button>
-    </div>
-</div>
+<section id="about" class="section">
+    <h2>Benvenuto nella nostra piattaforma Web3</h2>
+    <p>
+        Una piattaforma decentralizzata che ti permette di connetterti, interagire e
+        sfruttare il potenziale della blockchain. Unisciti alla rivoluzione del Web3 con la
+        nostra piattaforma innovativa che offre strumenti potenti per utenti e sviluppatori.
+    </p>
+    <a href="#wallet" class="cta-button">Connetti il tuo Wallet</a>
+</section>
+
+<section id="features" class="section">
+    <h2>Funzionalità Principali</h2>
+    <p>
+        La nostra piattaforma offre una varietà di funzionalità pensate per semplificare
+        l'interazione con il mondo della blockchain:
+    </p>
+    <ul>
+        <li>Transazioni sicure con criptovalute</li>
+        <li>Interoperabilità tra diverse blockchain</li>
+        <li>Gestione facile di NFT e token</li>
+        <li>Accesso a strumenti DeFi avanzati</li>
+    </ul>
+</section>
+
+<section id="wallet" class="wallet-connect">
+    <h2>Connetti il tuo Wallet</h2>
+    <p>Per iniziare, collega il tuo wallet Web3 e inizia a utilizzare la piattaforma.</p>
+    <button id="connectWalletBtn">Connetti Wallet</button>
+</section>
+
+<section id="contact" class="section">
+    <h2>Contattaci</h2>
+    <p>
+        Hai domande o vuoi saperne di più sul nostro progetto? Contattaci!
+    </p>
+    <a href="mailto:info@web3platform.com" class="cta-button">Invia una Email</a>
+</section>
+
+<footer class="footer">
+    <p>&copy; 2025 Web3 Platform. Tutti i diritti riservati.</p>
+    <p>
+        <a href="#">Privacy Policy</a> | <a href="#">Termini e Condizioni</a>
+    </p>
+</footer>
 
 <script>
-    const songSelect = document.getElementById("songSelect");
-    const audioPlayer = document.getElementById("audioPlayer");
-    const audioSource = document.getElementById("audioSource");
-
-    // Cambia il brano quando l'utente seleziona un nuovo brano
-    songSelect.addEventListener("change", function() {
-        const selectedSong = songSelect.value;
-        audioSource.src = selectedSong;
-        audioPlayer.load();
-        audioPlayer.play();
+    document.getElementById('connectWalletBtn').addEventListener('click', function() {
+        alert('Funzione di connessione wallet in arrivo!');
+        // Aggiungi il codice per connettere un wallet Web3 qui
     });
-
-    // Funzione per riprodurre il brano
-    function playAudio() {
-        audioPlayer.play();
-    }
-
-    // Funzione per mettere in pausa il brano
-    function pauseAudio() {
-        audioPlayer.pause();
-    }
 </script>
 
 </body>
