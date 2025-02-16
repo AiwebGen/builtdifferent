@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lettore Musicale</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        audio {
+            width: 100%;
+            margin-top: 20px;
+        }
+        .controls {
+            margin-top: 20px;
+        }
+        .controls button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .controls button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Lettore Musicale</h1>
+    <label for="songSelect">Scegli un brano:</label>
+    <select id="songSelect">
+        <option value="song1.mp3">Brano 1</option>
+        <option value="song2.mp3">Brano 2</option>
+        <option value="song3.mp3">Brano 3</option>
+    </select>
+
+    <audio id="audioPlayer" controls>
+        <source id="audioSource" src="song1.mp3" type="audio/mp3">
+        Il tuo browser non supporta l'elemento audio.
+    </audio>
+
+    <div class="controls">
+        <button onclick="playAudio()">Riproduci</button>
+        <button onclick="pauseAudio()">Pausa</button>
+    </div>
+</div>
+
+<script>
+    const songSelect = document.getElementById("songSelect");
+    const audioPlayer = document.getElementById("audioPlayer");
+    const audioSource = document.getElementById("audioSource");
+
+    // Cambia il brano quando l'utente seleziona un nuovo brano
+    songSelect.addEventListener("change", function() {
+        const selectedSong = songSelect.value;
+        audioSource.src = selectedSong;
+        audioPlayer.load();
+        audioPlayer.play();
+    });
+
+    // Funzione per riprodurre il brano
+    function playAudio() {
+        audioPlayer.play();
+    }
+
+    // Funzione per mettere in pausa il brano
+    function pauseAudio() {
+        audioPlayer.pause();
+    }
+</script>
+
+</body>
+</html>
