@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,20 +20,21 @@
       overflow: hidden;
       z-index: 9999;
     }
-    /* Video container secondo il codice fornito (quadrato) */
-    #splash .video-container {
+    /* GIF container (crea un quadrato con rapporto 1:1) */
+    #splash .gif-container {
       position: relative;
       width: 100%;
       max-width: 800px;
       height: 0;
-      padding-bottom: 100%; /* crea un quadrato */
+      padding-bottom: 100%;
     }
-    #splash .video-container iframe {
+    #splash .gif-container img {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      object-fit: contain;
       border: none;
     }
     /* Resto degli stili */
@@ -216,10 +217,10 @@
   </script>
 </head>
 <body>
-  <!-- Splash Screen -->
+  <!-- Splash Screen con la GIF centrata -->
   <div id="splash">
-    <div class="video-container">
-      <iframe allow="fullscreen" allowfullscreen height="100%" src="https://jmp.sh/s/y7PW1XcArEB4MvzDoq3v" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0; top:0;"></iframe>
+    <div class="gif-container">
+      <img src="https://imagizer.imageshack.com/img923/4705/8vTFg2.gif" alt="Splash GIF">
     </div>
   </div>
 
@@ -249,7 +250,7 @@
   <div id="how-to-buy" class="section">
     <h2>How to Buy</h2>
     <div class="how-to-buy-section">
-      <img src="https://imagizer.imageshack.com/img923/9535/9Cnumn.jpg" alt="How to Buy" />
+      <img src="https://imagizer.imageshack.com/img923/9535/9Cnumn.jpg" alt="How to Buy">
       <div class="how-to-buy-content">
         <div class="how-to-buy-item">
           <h3>Download Wallet</h3>
