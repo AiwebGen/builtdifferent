@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lettore Musicale</title>
+    <title>BuildDifferent</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,6 +15,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            flex-direction: column;
         }
         .container {
             text-align: center;
@@ -54,12 +55,20 @@
         .controls button:hover {
             background-color: #0056b3;
         }
+        .logo img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Lettore Musicale</h1>
+    <div class="logo">
+        <img src="https://i.ibb.co/0Ry1jFnf" alt="Logo BuildDifferent">
+    </div>
+    <h1>BuildDifferent</h1>
     <label for="songSelect">Scegli un brano:</label>
     <select id="songSelect">
         <option value="song1.mp3">Brano 1</option>
