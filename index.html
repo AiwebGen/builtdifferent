@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>$BUILT</title>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
   <style>
-    /* Splash Screen Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Splash Screen */
     #splash {
       position: fixed;
       top: 0;
@@ -23,13 +29,12 @@
       max-width: 100%;
       height: auto;
     }
-    
-    /* Nasconde il corpo della pagina fino al termine dello splash screen */
+
+    /* Nasconde il contenuto del sito fino alla fine dello splash screen */
     #main-content {
       display: none;
     }
 
-    /* Background animato */
     body {
       background: linear-gradient(45deg, #1c1c1c, #a9a9a9);
       background-size: 400% 400%;
@@ -37,29 +42,128 @@
       color: white;
       font-family: 'Bangers', cursive, Arial, sans-serif;
       text-align: center;
+      overflow-y: auto;
+      text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+      letter-spacing: 1px;
     }
+
     @keyframes gradientShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
-    /* Sezioni con bordi arrotondati */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding: 20px;
+    }
+
+    .logo {
+      width: 150px;
+      height: auto;
+    }
+
+    .title {
+      font-size: 3rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 15px;
+    }
+
+    .socials a {
+      color: white;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
+    .main-image {
+      width: 100%;
+      height: auto;
+    }
+
+    .ca-section {
+      margin-top: 20px;
+      font-size: 1.2rem;
+    }
+
+    .ca-text {
+      background-color: #222;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .menu {
+      width: 100%;
+      background-color: #111;
+      padding: 15px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.2rem;
+    }
+
     .section {
       padding: 80px 20px;
       min-height: 100vh;
-      background-color: rgba(0, 0, 0, 0.5);
-      border: 2px solid white;
+      border: 3px solid white;
       border-radius: 15px;
-      margin: 50px auto;
-      max-width: 900px;
+      margin-top: 80px;
+      background-color: rgba(0, 0, 0, 0.5);
     }
+
     .section h2 {
-      font-size: 3.5rem;
+      font-size: 4rem;
       margin-bottom: 20px;
-      text-transform: uppercase;
+    }
+
+    .footer {
+      background-color: #111;
+      padding: 20px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 1rem;
     }
   </style>
+
+  <script>
+    function copyToClipboard() {
+      const text = document.getElementById("ca-text").innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Copied to clipboard: " + text);
+      });
+    }
+
+    // Mostra il sito dopo 6 secondi e nasconde lo splash screen
+    window.onload = function() {
+      setTimeout(() => {
+        document.getElementById('splash').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+      }, 6000);
+    };
+  </script>
 </head>
 <body>
 
@@ -70,21 +174,39 @@
 
   <!-- Contenuto del sito -->
   <div id="main-content">
-    <div class="section">
-      <h2>🚀 COMMUNITY TAKEOVER – $BUILT DIFFERENT IS BACK! 🚀</h2>
-      <p>
-        They tried to stop us. They tried to shut us down. But we are <b>DIFFERENT</b>.
-      </p>
+    <div class="menu">
+      <a href="#about">$BUILT</a>
+      <a href="#how-to-buy">How to Buy</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#faq">FAQ</a>
+    </div>
+
+    <div class="container">
+      <img src="logo.png" alt="$BUILT Logo" class="logo">
+      <div class="title">$BUILT<strong>DIFFERENT</strong></div>
+      <img src="https://imagizer.imageshack.com/img922/2915/neUdYj.jpg" alt="$BUILT Image" class="main-image">
+    </div>
+
+    <div id="how-to-buy" class="section">
+      <h2>How to Buy</h2>
+    </div>
+
+    <div id="tokenomics" class="section">
+      <h2>TOTAL SUPPLY</h2>
+      <p>1.000.000.00 $BUILT</p>
+    </div>
+
+    <div id="faq" class="section">
+      <h2>FAQ</h2>
+      <p>Frequently asked questions about $BUILT.</p>
+    </div>
+
+    <div class="footer">
+      <a href="https://www.instagram.com/p/DF6lU2So37L/?igsh=cTFxMmEycWRncWU=" target="_blank">Instagram</a>
+      <a href="https://x.com/ctobuilt?s=21" target="_blank">X</a>
+      <a href="http://www.tiktok.com/@builtdifferentcto" target="_blank">TikTok</a>
     </div>
   </div>
-
-  <script>
-    // Attende 6 secondi e poi nasconde lo splash screen
-    setTimeout(() => {
-      document.getElementById('splash').style.display = 'none';
-      document.getElementById('main-content').style.display = 'block';
-    }, 6000);
-  </script>
 
 </body>
 </html>
