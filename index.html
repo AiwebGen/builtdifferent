@@ -20,7 +20,7 @@
       overflow: hidden;
       z-index: 9999;
     }
-    /* Ridimensiona il contenitore del video (rapporto 16:9) */
+    /* Video container con rapporto 16:9 */
     #splash .video-container {
       position: relative;
       width: 80vw;
@@ -201,11 +201,11 @@
     }
   </style>
   <script>
-    // Nasconde lo splash screen dopo 15 secondi
+    // Nasconde lo splash screen dopo 5 secondi
     window.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         document.getElementById('splash').style.display = 'none';
-      }, 15000);
+      }, 5000);
     });
     function copyToClipboard() {
       const text = document.getElementById("ca-text").innerText;
@@ -219,7 +219,7 @@
   <!-- Splash Screen con l'iframe centrato e ridimensionato -->
   <div id="splash">
     <div class="video-container">
-      <iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://streamable.com/e/3880i8?autoplay=1&loop=0&nocontrols=1" width="100%"></iframe>
+      <iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://streamable.com/e/3880i8?autoplay=1&loop=0&nocontrols=1&hidewatermark=1" width="100%"></iframe>
     </div>
   </div>
 
