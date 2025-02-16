@@ -6,6 +6,37 @@
     <title>Built Different</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
+        /* Schermata di caricamento */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8); /* Sfondo scuro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loading-screen img {
+            width: 150px;
+            height: auto;
+            animation: rotateLogo 5s linear infinite; /* Animazione di rotazione */
+        }
+
+        @keyframes rotateLogo {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Nascondere il contenuto principale fino al caricamento */
+        .main-content {
+            display: none;
+        }
+
+        /* Stile della pagina principale */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -20,7 +51,7 @@
             justify-content: space-between;
         }
         header {
-            background-color: rgba(18, 18, 18, 0.7); /* Sfondo scuro semi-trasparente */
+            background-color: rgba(18, 18, 18, 0.7);
             padding: 20px 0;
             text-align: center;
         }
@@ -57,7 +88,7 @@
         .section {
             padding: 60px 20px;
             text-align: center;
-            background-color: rgba(18, 18, 18, 0.7); /* Sfondo scuro semi-trasparente */
+            background-color: rgba(18, 18, 18, 0.7);
             margin: 20px 0;
             border-radius: 10px;
         }
@@ -88,51 +119,67 @@
 </head>
 <body>
 
-<header>
-    <h1>Built Different</h1>
-</header>
+<!-- Schermata di caricamento -->
+<div class="loading-screen">
+    <img src="https://i.ibb.co/rR2qGcQZ/built-logo.jpg" alt="Built Different Logo">
+</div>
 
-<nav>
-    <a href="#about">Chi Siamo</a>
-    <a href="#features">Funzionalità</a>
-    <a href="#contact">Contattaci</a>
-</nav>
+<!-- Contenuto principale -->
+<div class="main-content">
+    <header>
+        <h1>Built Different</h1>
+    </header>
 
-<section id="about" class="section">
-    <h2>Benvenuto nella nostra piattaforma</h2>
-    <p>
-        Una piattaforma innovativa che ti permette di connetterti, interagire e sfruttare il potenziale del Web3. Unisciti alla rivoluzione tecnologica con Built Different.
-    </p>
-    <a href="#contact" class="cta-button">Scopri di più</a>
-</section>
+    <nav>
+        <a href="#about">Chi Siamo</a>
+        <a href="#features">Funzionalità</a>
+        <a href="#contact">Contattaci</a>
+    </nav>
 
-<section id="features" class="section">
-    <h2>Funzionalità Principali</h2>
-    <p>
-        Built Different offre una varietà di strumenti avanzati per l'ecosistema Web3:
-    </p>
-    <ul>
-        <li>Transazioni sicure con criptovalute</li>
-        <li>Interoperabilità tra diverse blockchain</li>
-        <li>Gestione facile di NFT e token</li>
-        <li>Accesso a strumenti DeFi avanzati</li>
-    </ul>
-</section>
+    <section id="about" class="section">
+        <h2>Benvenuto nella nostra piattaforma</h2>
+        <p>
+            Una piattaforma innovativa che ti permette di connetterti, interagire e sfruttare il potenziale del Web3. Unisciti alla rivoluzione tecnologica con Built Different.
+        </p>
+        <a href="#contact" class="cta-button">Scopri di più</a>
+    </section>
 
-<section id="contact" class="section">
-    <h2>Contattaci</h2>
-    <p>
-        Hai domande o vuoi saperne di più sul nostro progetto? Contattaci!
-    </p>
-    <a href="mailto:info@builtdifferent.com" class="cta-button">Invia una Email</a>
-</section>
+    <section id="features" class="section">
+        <h2>Funzionalità Principali</h2>
+        <p>
+            Built Different offre una varietà di strumenti avanzati per l'ecosistema Web3:
+        </p>
+        <ul>
+            <li>Transazioni sicure con criptovalute</li>
+            <li>Interoperabilità tra diverse blockchain</li>
+            <li>Gestione facile di NFT e token</li>
+            <li>Accesso a strumenti DeFi avanzati</li>
+        </ul>
+    </section>
 
-<footer class="footer">
-    <p>&copy; 2025 Built Different. Tutti i diritti riservati.</p>
-    <p>
-        <a href="#">Privacy Policy</a> | <a href="#">Termini e Condizioni</a>
-    </p>
-</footer>
+    <section id="contact" class="section">
+        <h2>Contattaci</h2>
+        <p>
+            Hai domande o vuoi saperne di più sul nostro progetto? Contattaci!
+        </p>
+        <a href="mailto:info@builtdifferent.com" class="cta-button">Invia una Email</a>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Built Different. Tutti i diritti riservati.</p>
+        <p>
+            <a href="#">Privacy Policy</a> | <a href="#">Termini e Condizioni</a>
+        </p>
+    </footer>
+</div>
+
+<script>
+    // Funzione per nascondere la schermata di caricamento e mostrare il contenuto principale dopo almeno 5 secondi
+    setTimeout(function() {
+        document.querySelector('.loading-screen').style.display = 'none';
+        document.querySelector('.main-content').style.display = 'block';
+    }, 5000); // 5 secondi
+</script>
 
 </body>
 </html>
