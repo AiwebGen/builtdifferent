@@ -16,11 +16,7 @@
       background: black;
       z-index: 9999;
     }
-    #splash video {
-      width: 100%;
-      height: 100vh;
-      object-fit: cover;
-    }
+    
     /* Resto degli stili */
     * {
       margin: 0;
@@ -186,20 +182,11 @@
     }
   </style>
   <script>
-    // Funzione per nascondere lo splash screen
-    function hideSplash() {
-      document.getElementById('splash').style.display = 'none';
-    }
+    // Nasconde lo splash screen dopo 15 secondi
     window.addEventListener('DOMContentLoaded', () => {
-      const splashVideo = document.getElementById('splash-video');
-      // Se il video termina, nasconde lo splash
-      splashVideo.addEventListener('ended', hideSplash);
-      // In caso di errore, nasconde lo splash dopo 15 secondi
-      splashVideo.addEventListener('error', () => {
-        setTimeout(hideSplash, 15000);
-      });
-      // Fallback: se per qualsiasi motivo l'evento 'ended' non scatta, nasconde lo splash dopo 15 secondi
-      setTimeout(hideSplash, 15000);
+      setTimeout(() => {
+        document.getElementById('splash').style.display = 'none';
+      }, 15000);
     });
     function copyToClipboard() {
       const text = document.getElementById("ca-text").innerText;
@@ -210,12 +197,11 @@
   </script>
 </head>
 <body>
-  <!-- Splash Screen -->
+  <!-- Splash Screen con l'iframe -->
   <div id="splash">
-    <video id="splash-video" autoplay playsinline muted>
-      <source src="https://cdn.streamable.com/video/3880i8.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    <div style="position:relative; width:100%; height:0px; padding-bottom:100%;">
+      <iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://streamable.com/e/3880i8?autoplay=1&loop=0&nocontrols=1" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe>
+    </div>
   </div>
 
   <!-- Main Content -->
