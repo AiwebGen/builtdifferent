@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pepegogh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Luckiest+Guy&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -11,23 +12,19 @@
             box-sizing: border-box;
         }
         body {
-            background: linear-gradient(135deg, #333, #888, #fff);
+            background: linear-gradient(45deg, #1c1c1c, #a9a9a9, #ffffff);
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
             color: white;
-            font-family: 'Comic Sans MS', cursive, sans-serif; /* Font per meme coins */
+            font-family: 'Bangers', cursive, Arial, sans-serif;
             text-align: center;
             overflow-y: auto;
-            animation: backgroundEffect 10s infinite alternate;
         }
-        
-        @keyframes backgroundEffect {
-            0% {
-                background: linear-gradient(135deg, #333, #888, #fff);
-            }
-            100% {
-                background: linear-gradient(135deg, #444, #aaa, #ccc);
-            }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
-
         .container {
             display: flex;
             flex-direction: column;
@@ -35,39 +32,32 @@
             gap: 40px;
             padding: 20px;
         }
-
         .logo {
             width: 150px;
             height: auto;
         }
-
         .title {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: bold;
         }
-
         .socials {
             display: flex;
             gap: 15px;
         }
-
         .socials a {
             color: white;
             font-size: 1.5rem;
             text-decoration: none;
         }
-
         .main-image {
             width: 80%;
             max-width: 600px;
             height: auto;
         }
-
         .ca-section {
             margin-top: 20px;
             font-size: 1.2rem;
         }
-
         .ca-text {
             background-color: #222;
             padding: 10px;
@@ -75,7 +65,6 @@
             cursor: pointer;
             user-select: none;
         }
-
         .menu {
             width: 100%;
             background-color: #111;
@@ -86,22 +75,20 @@
             text-align: center;
             z-index: 1000;
         }
-
         .menu a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
             font-size: 1.2rem;
         }
-
         .section {
             padding: 80px 20px;
             min-height: 100vh;
-            border: 2px solid white;
-            border-radius: 15px; /* Cornice con angoli smussati */
-            margin: 20px 0;
+            border: 3px solid white;
+            border-radius: 15px;
+            margin-top: 80px;
+            background-color: rgba(0, 0, 0, 0.5);
         }
-
         .built-section {
             width: 80%;
             max-width: 600px;
@@ -110,22 +97,19 @@
             margin: 20px auto;
             text-align: center;
             background-color: #1a1a1a;
-            border-radius: 15px; /* Cornice con angoli smussati */
+            border-radius: 15px;
         }
-
         .built-title {
             font-size: 1.5rem;
             font-weight: bold;
             margin-bottom: 10px;
         }
-
         .footer {
             background-color: #111;
             padding: 20px;
             text-align: center;
             margin-top: 50px;
         }
-
         .footer a {
             color: white;
             text-decoration: none;
