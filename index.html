@@ -3,138 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Built Different</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <title>Built Different - Loading</title>
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
+        /* Stile della pagina di pre-caricamento */
+        body, html {
+            height: 100%;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+        }
+
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-image: url('https://i.ibb.co/C5jMx5L4/bg-built.jpg');
             background-size: cover;
             background-position: center;
-            color: #fff;
-            height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        header {
-            background-color: rgba(18, 18, 18, 0.7); /* Sfondo scuro semi-trasparente */
-            padding: 20px 0;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 36px;
-            margin: 0;
-        }
-        nav {
-            text-align: center;
-            padding: 10px 0;
-        }
-        nav a {
+            justify-content: center;
+            align-items: center;
             color: #fff;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: 500;
+            font-family: 'Roboto', sans-serif;
+            z-index: 9999;
         }
-        nav a:hover {
-            color: #f39c12;
+
+        .loader {
+            border: 8px solid rgba(255, 255, 255, 0.3);
+            border-top: 8px solid #f39c12;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1.5s linear infinite;
         }
-        .cta-button {
-            background-color: #f39c12;
-            color: #fff;
-            padding: 12px 24px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 18px;
-            margin: 20px 0;
-            display: inline-block;
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
-        .cta-button:hover {
-            background-color: #e67e22;
-        }
-        .section {
-            padding: 60px 20px;
-            text-align: center;
-            background-color: rgba(18, 18, 18, 0.7); /* Sfondo scuro semi-trasparente */
-            margin: 20px 0;
-            border-radius: 10px;
-        }
-        .section h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-        .section p {
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto 20px;
-        }
-        .footer {
-            background-color: rgba(18, 18, 18, 0.7);
-            color: #aaa;
-            padding: 20px 0;
-            text-align: center;
-        }
-        .footer a {
-            color: #fff;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-        .footer a:hover {
-            color: #f39c12;
+
+        /* Nascondi la pagina principale fino al caricamento */
+        .main-content {
+            display: none;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Built Different</h1>
-</header>
+<!-- Schermata di caricamento -->
+<div class="loading-screen">
+    <div class="loader"></div>
+</div>
 
-<nav>
-    <a href="#about">Chi Siamo</a>
-    <a href="#features">Funzionalità</a>
-    <a href="#contact">Contattaci</a>
-</nav>
+<!-- Contenuto principale (pagina vera e propria) -->
+<div class="main-content">
+    <header>
+        <h1>Built Different</h1>
+    </header>
 
-<section id="about" class="section">
-    <h2>Benvenuto nella nostra piattaforma</h2>
-    <p>
-        Una piattaforma innovativa che ti permette di connetterti, interagire e
-        sfruttare il potenziale del Web3. Unisciti alla rivoluzione tecnologica con
-        Built Different.
-    </p>
-    <a href="#contact" class="cta-button">Scopri di più</a>
-</section>
+    <nav>
+        <a href="#about">Chi Siamo</a>
+        <a href="#features">Funzionalità</a>
+        <a href="#contact">Contattaci</a>
+    </nav>
 
-<section id="features" class="section">
-    <h2>Funzionalità Principali</h2>
-    <p>
-        Built Different offre una varietà di strumenti avanzati per l'ecosistema Web3:
-    </p>
-    <ul>
-        <li>Transazioni sicure con criptovalute</li>
-        <li>Interoperabilità tra diverse blockchain</li>
-        <li>Gestione facile di NFT e token</li>
-        <li>Accesso a strumenti DeFi avanzati</li>
-    </ul>
-</section>
+    <section id="about">
+        <h2>Benvenuto nella nostra piattaforma</h2>
+        <p>
+            Una piattaforma innovativa che ti permette di connetterti, interagire e sfruttare il potenziale del Web3.
+            Unisciti alla rivoluzione tecnologica con Built Different.
+        </p>
+    </section>
 
-<section id="contact" class="section">
-    <h2>Contattaci</h2>
-    <p>
-        Hai domande o vuoi saperne di più sul nostro progetto? Contattaci!
-    </p>
-    <a href="mailto:info@builtdifferent.com" class="cta-button">Invia una Email</a>
-</section>
+    <section id="features">
+        <h2>Funzionalità Principali</h2>
+        <p>
+            Built Different offre una varietà di strumenti avanzati per l'ecosistema Web3:
+        </p>
+    </section>
 
-<footer class="footer">
-    <p>&copy; 2025 Built Different. Tutti i diritti riservati.</p>
-    <p>
-        <a href="#">Privacy Policy</a> | <a href="#">Termini e Condizioni</a>
-    </p>
-</footer>
+    <footer>
+        <p>&copy; 2025 Built Different. Tutti i diritti riservati.</p>
+    </footer>
+</div>
+
+<script>
+    // Funzione per nascondere la schermata di caricamento e mostrare il contenuto principale
+    window.onload = function() {
+        document.querySelector('.loading-screen').style.display = 'none';
+        document.querySelector('.main-content').style.display = 'block';
+    }
+</script>
 
 </body>
 </html>
