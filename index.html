@@ -12,7 +12,9 @@
       box-sizing: border-box;
     }
     body {
-      background: #1c1c1c;
+      background: linear-gradient(45deg, #1c1c1c, #a9a9a9);
+      background-size: 400% 400%;
+      animation: gradientShift 10s ease infinite;
       color: white;
       font-family: 'Bangers', cursive, Arial, sans-serif;
       text-align: center;
@@ -20,45 +22,31 @@
       text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
       letter-spacing: 1px;
     }
-    .container {
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .splash-screen {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: black;
       display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .splash-screen img {
+      width: 80%;
+      max-width: 500px;
+    }
+    .container {
+      display: none; /* Nasconde il sito fino al termine dello splash screen */
       flex-direction: column;
       align-items: center;
       gap: 40px;
       padding: 20px;
-    }
-    .logo {
-      width: 150px;
-      height: auto;
-    }
-    .title {
-      font-size: 3rem;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-    .socials {
-      display: flex;
-      gap: 15px;
-    }
-    .socials a {
-      color: white;
-      font-size: 1.5rem;
-      text-decoration: none;
-    }
-    .main-image {
-      width: 100%;
-      height: auto;
-    }
-    .ca-section {
-      margin-top: 20px;
-      font-size: 1.2rem;
-    }
-    .ca-text {
-      background-color: #222;
-      padding: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      user-select: none;
     }
     .menu {
       width: 100%;
@@ -88,22 +76,6 @@
       font-size: 4rem;
       margin-bottom: 20px;
     }
-    .built-section {
-      width: 80%;
-      max-width: 600px;
-      padding: 20px;
-      border: 2px solid white;
-      margin: 20px auto;
-      text-align: center;
-      background-color: #1a1a1a;
-      border-radius: 15px;
-    }
-    .built-title {
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-      letter-spacing: 3px;
-    }
     .footer {
       background-color: #111;
       padding: 20px;
@@ -119,29 +91,61 @@
   </style>
 </head>
 <body>
+  
+  <!-- SPLASH SCREEN -->
+  <div id="splash" class="splash-screen">
+    <img src="https://imagizer.imageshack.com/img923/4705/8vTFg2.gif" alt="Loading...">
+  </div>
+
+  <!-- MENU -->
   <div class="menu">
     <a href="#about">$BUILT</a>
     <a href="#how-to-buy">How to Buy</a>
     <a href="#tokenomics">Tokenomics</a>
     <a href="#faq">FAQ</a>
   </div>
-  <div class="container">
-    <img src="logo.png" alt="$BUILT Logo" class="logo">
-    <div class="title">$BUILT<strong>DIFFERENT</strong></div>
-    <img src="https://imagizer.imageshack.com/img922/2915/neUdYj.jpg" alt="$BUILT Image" class="main-image">
-    <div class="built-section">
-      <div class="built-title">$BUILT</div>
-      <p>Built Different CTO spearheaded a remarkable community takeover, steering CTO towards new heights. We are simply $BUILT different</p>
+
+  <!-- CONTENUTO PRINCIPALE -->
+  <div class="container" id="main-content">
+    <h1>Welcome to $BUILT DIFFERENT</h1>
+    
+    <div id="about" class="section">
+      <h2>ABOUT</h2>
+      <p>🚀 COMMUNITY TAKEOVER – $BUILT DIFFERENT IS BACK! 🚀</p>
+      <p>They tried to stop us. They tried to shut us down. But we are DIFFERENT.</p>
+      <p>$BUILT DIFFERENT wasn’t just a memecoin—it was a mentality...</p>
     </div>
-    <div class="ca-section">
-      <strong>CA:</strong>
-      <div id="ca-text" class="ca-text">vsDLJBTQZTFcnvrosoA49Czqy9qZGu4tgjh768wpump</div>
+
+    <div id="how-to-buy" class="section">
+      <h2>How to Buy</h2>
+      <p>Instructions on how to buy $BUILT.</p>
+    </div>
+
+    <div id="tokenomics" class="section">
+      <h2>TOKENOMICS</h2>
+      <p>1,000,000,000 $BUILT</p>
+    </div>
+
+    <div id="faq" class="section">
+      <h2>FAQ</h2>
+      <p>Frequently asked questions about $BUILT.</p>
     </div>
   </div>
+
+  <!-- FOOTER -->
   <div class="footer">
     <a href="https://www.instagram.com/p/DF6lU2So37L/?igsh=cTFxMmEycWRncWU=" target="_blank">Instagram</a>
     <a href="https://x.com/ctobuilt?s=21" target="_blank">X</a>
     <a href="http://www.tiktok.com/@builtdifferentcto" target="_blank">TikTok</a>
   </div>
+
+  <script>
+    // Attendere 6 secondi e poi mostrare il sito
+    setTimeout(() => {
+      document.getElementById("splash").style.display = "none";
+      document.getElementById("main-content").style.display = "flex";
+    }, 6000);
+  </script>
+
 </body>
 </html>
